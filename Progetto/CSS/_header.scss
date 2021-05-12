@@ -1,0 +1,109 @@
+@import "./variables";
+@import "./media-queries";
+
+.header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 30px 18% 0 12%;
+
+    @include w1280px{
+        margin: 30px 18% 0 6%;
+    }
+    @include w870px{
+        margin: 30px 18% 0 18%;
+        min-width: 340px;
+    }
+
+    &-nav{
+        display: flex;
+
+        @include w870px{
+            display: flex;
+            justify-content: space-between;
+
+        }
+
+        &-hamburger{
+            display: none;
+
+            @include w870px{
+                display: initial;
+            }
+
+            #line-1{
+                @include hamburger;
+                background-color: $fuchsia;
+            }
+
+            #line-2{
+                @include hamburger;
+                background-color: $orange;                
+            }
+
+            #line-3{
+                @include hamburger;
+               background: linear-gradient(90deg, $blue 50%, $light-blue 50%); 
+            }
+        }
+
+        &-item{
+            text-decoration: none;
+            padding: 0 1rem;
+            animation-name: strech;
+            animation-play-state: paused;
+
+            @include w870px{
+                display: none;
+            }
+
+            &-1{
+                border-bottom: 5px solid $fuchsia;
+            }
+
+            &-2{
+                border-bottom-style: solid;
+                border-bottom-width: 5px;
+                border-image: linear-gradient(45deg, $orange, $fuchsia) 1;
+            }
+
+            &-3{
+                border-bottom-style: solid;
+                border-bottom-width: 5px;
+                border-image: linear-gradient(90deg, $blue 50%, $light-blue 50%) 1;
+            }
+        }
+
+        &-item:hover{
+            animation-play-state: running;
+            animation-duration: 2s;
+            animation-iteration-count:infinite;
+            animation-fill-mode:none;
+        }
+    }
+
+    
+
+    li{
+        display: inline;
+        list-style: none;
+        padding-left: 2rem;
+        font-size: 20px;
+    }
+
+}
+
+@keyframes strech{
+    0%{
+        padding: 0 1rem;
+    }
+
+    50%{
+        padding: 0 1.5rem;
+    }
+
+    100%{
+        padding: 0 1,5rem;
+    }
+}
+

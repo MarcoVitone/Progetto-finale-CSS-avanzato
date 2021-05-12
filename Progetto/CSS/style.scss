@@ -1,0 +1,48 @@
+@import "./variables";
+
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+    color: white;
+}
+
+body{
+    background-color: black;
+}
+
+.comment {
+    position: fixed;
+    bottom: 18px;
+    right: 18px;
+    z-index: 1;
+
+    #comment-dot{
+        font-size: 60px;
+        color: $fuchsia;
+    }
+
+    #comment-dot:hover{
+        animation-name: scale;
+        animation-play-state: running;
+        animation-duration: 1s;
+        animation-iteration-count: 1;
+        animation-fill-mode: forwards;     
+    }
+
+    @keyframes scale {
+        from{
+            transform: scale(1);
+        }
+        to{
+            transform: scale(1.2);
+        }    
+    }
+}
+
+@import "./header";
+@import "./main";
+@import "./level";
+@import "./button";
+@import "./footer";

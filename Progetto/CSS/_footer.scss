@@ -1,0 +1,135 @@
+@import "./variables";
+@import "./media-queries";
+
+.footer{
+    @include flexCenter;
+    height: 400px;
+
+    @include w870px{
+        flex-direction: column;
+        min-width: 340px;
+        width: 100%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    &-left{
+        height: 100%;
+        width: 40vw;
+        background: $light-blue;
+
+        @include w870px{
+            height: 50%;
+            width: 100%;
+            min-width: 340px;
+        }
+
+        &-container{
+            margin: 80px 0px 0px 300px;
+            width: 340px;
+
+            @include w1820px{
+                margin: 80px 0px 0px 100px;
+            }
+
+            @include w1280px{
+                margin: 80px 0px 0px 20px;
+            }
+
+            @include w870px{
+                display: block;
+                margin: auto;
+            }
+
+            h3{
+                color: $blue;
+                font-size: 25px;
+                margin-bottom: 20px;
+            }
+
+            &-icon{
+                max-width: 40px;
+                max-height: 40px;
+                margin: 0 100px 20px 0;
+                
+                &-last{
+                    margin: 0 0 20px 0;
+                }
+            }
+
+            &-email{
+                margin-bottom: 20px;
+
+                h4{
+                    color: $blue;
+                    font-size: 20px;
+                }
+
+                p{
+                    color: $blue;
+                    font-size: 15px;
+                    font-weight: 100;
+                    letter-spacing: 3px;
+                }
+            }
+
+            &-policy{
+                display: flex;
+                
+                a,p{
+                    flex-direction: row;
+                    text-decoration: none;
+                    color: $blue;
+                    letter-spacing: 1px;
+                    margin-right: 10px;
+                    font-size: 13px;
+                }
+            }
+        }
+
+    }
+
+    &-right{
+        background: $blue;
+        height: 100%;
+        width: 60vw;
+
+        @include w870px{
+            height: 50%;
+            width: 100%;
+            min-width: 340px;
+        }
+
+        &-container{
+            width: 530px;
+            height: 180px;
+            margin: 80px 0 0 400px;
+            position: relative;
+
+            @include w1820px{
+                margin: 80px 0 0 100px;
+            }
+
+            @include w1280px{
+                width: 320px;
+                margin: 80px 0 0 20px;
+            }
+
+            @include w870px{
+                display: block;
+                margin: auto;
+            }
+
+            h2{
+                color: $light-blue;
+                letter-spacing: 1px;
+            }
+
+            img{
+                position: absolute;
+                right: 0;
+                bottom: 0;
+            }
+        }
+    }
+}

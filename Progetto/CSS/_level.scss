@@ -1,0 +1,356 @@
+@import "./variables";
+@import "./media-queries";
+
+.level{
+    position: relative;
+    &-title{
+        @include levelTitleSetting();
+    }
+
+    &-setting{
+        @include flexCenter();
+        @include levelSquareSettings();
+    }
+
+    // Level-1
+    &-1{
+        @include flexCenter();
+        @include levelSquareSettings();
+        box-shadow: -5px 1px 31px $blue;
+        background: linear-gradient(135deg, $fuchsia , $blue , $light-blue 100%);
+        
+        &-left{
+            @include flexCenter;
+            flex-direction: column;
+            margin: 0 10% 0 10%;
+
+            h1{
+                margin-bottom: 25px;
+            }
+        }
+
+        &-right{
+            @include flexCenter;
+            
+            &-card{
+                width: 100%;
+                margin-right: 50px;
+                text-align: center;
+
+                @include w1280px{
+                   margin-right: 10px; 
+                }
+
+                @include w870px{
+                    margin-top: 20px;
+                }
+                
+                a{
+                    text-decoration: none;
+                }
+
+                h5{
+                    font-family: 'Press Start 2P', cursive;
+                    color: $fuchsia;
+                    font-size: 15px;
+                    letter-spacing: 3px;
+
+                    @include w1280px{
+                        font-size: 10px;
+                    }
+                }
+            }
+
+            &-img{
+                max-width: 135px;
+                max-height: 177px;
+
+                @include w1820px{
+                    max-width: 120px;
+                    max-height: 158px;
+                }
+
+                @include w1280px{
+                    max-width: 80px;
+                    max-height: 105px;
+                }
+            }
+
+            .playable:hover{
+                animation-name: overview-1;
+                animation-play-state: running;
+                animation-duration: 1s;
+                animation-iteration-count: 1;
+                animation-fill-mode: forwards;
+            }
+
+            .comingsoon:hover{
+                animation-name: flickering;
+                animation-play-state: running;
+                animation-duration: 0.5s;
+                animation-iteration-count: 1;
+            }
+        }
+    }
+
+    // level 2
+    &-2{
+        @include flexCenter();
+        @include levelSquareSettings();       
+        box-shadow: -5px 1px 31px $fuchsia;
+        background: linear-gradient(135deg, $blue, $fuchsia 90%);
+        
+         &-left{
+            @include flexCenter;
+            flex-direction: column;
+            flex: 0.5;
+            margin: 0 10% 0 10%;
+        }
+
+        &-right{
+            @include flexCenter;
+            flex-direction: row;
+            flex: 0.5;
+
+            &-img{
+                margin-right: 25px;
+
+                @include w1280px{
+                    max-width: 120px;
+                    max-height: 158px;
+                    margin-right: 10px;
+                }
+
+                @include w870px{
+                    max-width: 100px;
+                }
+            }
+
+            &-card{
+                width: 100%;
+                margin-right: 25px;
+                margin-left: 30px;
+
+                @include w1280px{
+                    max-width: 131px;
+                    max-height: 145px;
+                    margin-right: 15px;
+                    margin-left: 15px;
+                }
+            }
+
+            &-card:hover{
+                animation-name: overview-2;
+                animation-play-state: running;
+                animation-duration: 1s;
+                animation-iteration-count: 1;
+                animation-fill-mode: forwards;                
+            }
+
+            &-skills{
+                width: 100%;
+                margin-right: 50px;
+
+                @include w870px{
+                    margin-right: 0;
+                }
+            }
+        }
+    }
+
+    // level 3
+    &-3{
+        @include flexCenter();
+        @include levelSquareSettings();       
+        box-shadow: -5px 1px 31px $light-blue;
+        background: linear-gradient(135deg, $blue, $light-blue 90%);
+        
+         &-left{
+            @include flexCenter;
+            flex-direction: column;
+            flex: 0.5;
+            margin: 0 10% 0 10%;
+        }
+
+        &-right{
+            @include flexCenter;
+            flex-direction: row;
+            flex: 0.5;
+
+            &-img{
+                margin-right: 50px;
+
+                @include w870px{
+                    margin: 0;
+                }
+            }
+
+            &-gamepad{
+                margin-right: 100px;
+
+                @include w1280px{
+                    max-width: 304px;
+                    max-height: 243px;
+                    margin-right: 20px;
+                }
+
+                @include w870px{
+                    width: 100%;
+                    display: flex;
+                    justify-content: center;
+                }
+            }
+        }
+    }
+
+
+    // level 4
+    &-4{
+        @include flexCenter();
+        @include levelSquareSettings();       
+        box-shadow: -5px 1px 31px $fuchsia;
+        background: linear-gradient(160deg, $fuchsia, $orange 90%);
+        
+         &-left{
+            @include flexCenter;
+            flex-direction: column;
+            flex: 0.5;
+            margin: 0 10% 0 10%;
+        }
+
+        &-right{
+            @include flexCenter;
+            flex-direction: row;
+            flex: 0.5;
+
+            &-card{
+                margin-right: 30px;
+
+                @include w1280px{
+                    margin-right: 5px;
+                }
+
+                @include w870px{
+                    margin: 0;
+                }
+
+                h5{
+                    font-family: 'Press Start 2P', cursive;
+                    color: white;
+                    font-size: 13px;
+                    letter-spacing: 3px;
+                    text-align: center;
+
+                    @include w1280px{
+                        font-size: 10px;
+                    }
+
+                    @include w870px{
+                        font-size: 8px;
+                        margin-top: 3px;
+                    }
+
+                    #angry{
+                        font-family: 'Press Start 2P', cursive;
+                        color: $fuchsia;
+                        font-size: 15px;
+                        letter-spacing: 3px;
+
+                        @include w1280px{
+                            font-size: 11px;
+                        }
+
+                        @include w870px{
+                            font-size: 9px;
+                        }
+                    }
+
+                    #defeated{
+                        font-family: 'Press Start 2P', cursive;
+                        color: $light-blue;
+                        font-size: 15px;
+                        letter-spacing: 3px; 
+
+                        @include w1280px{
+                            font-size: 11px;
+                        }
+
+                        @include w870px{
+                            font-size: 9px;
+                        }
+                    }
+                }
+            }
+
+            &-img{
+                max-width: 171px;
+                max-height: 171px;
+
+                @include w1280px {
+                    max-width: 120px;
+                    max-height: 120px;
+                    margin-right: 5px;
+                }    
+                
+                @include w870px{
+                    max-width: 90px;
+                    max-height: 90px;
+                    display: block;
+                    margin: auto;
+                    text-align: center;
+                }
+            }
+        }
+    }
+
+    &-line{
+        @include levelLine();
+    }
+    #line-1{
+        background: $blue;
+    }
+    #line-2{
+        background: $fuchsia;
+    }
+    #line-3{
+        background: $light-blue;
+    }
+    #line-4{
+        background: $blue;
+    }
+
+}
+
+@keyframes overview-1{
+    to{
+        transform: scale(1.1);
+    }
+}
+
+@keyframes flickering{
+    0%{
+        transform: rotate(1deg);
+    }
+
+    25%{
+        transform: rotate(-1deg);
+    }
+
+    50%{
+        transform: rotate(1deg);
+    }
+
+    75%{
+        transform: rotate(-1deg);
+    }
+
+    100%{
+        transform: rotate(1deg);
+    }
+}
+
+@keyframes overview-2{
+    to{
+        transform: scale(1.1);
+    }
+}

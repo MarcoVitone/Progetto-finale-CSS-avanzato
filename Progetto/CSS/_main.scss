@@ -1,0 +1,126 @@
+@import "./variables";
+@import "./media-queries";
+
+.top{
+    @include flexCenter();
+    height: 479px;
+    margin: 50px 16% 0 10%;
+    border-radius: 50px;
+    box-shadow: -5px 1px 31px $blue;
+
+    @include w1820px{
+        margin: 50px 16% 0 5%;
+    }
+
+    @include w870px{
+        margin: 50px 18% 0 18%;
+        height: 80vh;
+        flex-direction: column-reverse;
+        min-width: 340px;
+    }
+
+    &-left{
+        @include flexCenter;
+        justify-content: space-around;
+        height: 100%;
+        width: 50%;
+        background: linear-gradient(to right, $fuchsia 60%, $light-blue);
+        border-radius: 50px 0 0 50px;
+        transition-property: background;
+        transition-duration: 1s;
+
+        @include w1820px{
+            #console-right{
+                display: none;
+            }
+        }
+
+        @include w870px{
+            height: 55%;
+            width: 100%;
+            background: linear-gradient(to right, $fuchsia 60%, $light-blue);
+            border-radius: 0 0 50px 50px;
+        }
+        
+        &-console{
+            @include w870px{
+                max-width: 211px;
+                max-height: 314px;
+            }    
+        }
+
+        .console-hover{
+            display: none;
+        }
+        
+    }
+
+    &-left:hover{
+        background: linear-gradient(to right, $fuchsia , $light-blue 60%);
+
+        .top-left-console{
+            display: none;
+        }
+
+        .console-hover{
+            display: initial;
+
+            @include w870px{
+                max-width: 211px;
+                max-height: 314px;
+            }
+        }
+
+        @include w1820px{
+            #console-right-hover{
+            display: none;
+            }
+        }
+    }
+
+    &-right{
+        @include flexCenter;
+        flex-direction: column;
+        height: 100%;
+        width: 50%;
+        background: linear-gradient(to left, $blue 60%, $light-blue);
+        border-radius: 0 50px 50px 0;
+        transition-property: background;
+        transition-duration: 1s; 
+
+        @include w870px{
+            height: 45%;
+            width: 100%;
+            background: linear-gradient(to left, $blue 60%, $light-blue);
+            border-radius: 50px 50px 0 0;
+        }
+
+        h1{
+        font: Roboto 90px bold;
+
+        @include w870px{
+            font-size: 38px;
+        }
+        }
+    }
+
+    &-right:hover{
+        background: linear-gradient(to left, $blue, $light-blue 60%);
+    }
+
+    
+
+    &-line{
+        height: 2px;
+        width: 100%;
+        background-color: $blue;
+        z-index: -1;
+        position: absolute;
+        top: 420px;
+
+        @include w870px{
+            display: none;
+        }
+    }
+}
+
